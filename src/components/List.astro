@@ -1,0 +1,34 @@
+---
+export interface Props {
+  children: string[];
+}
+
+const { children } = Astro.props as Props;
+---
+
+<ul>
+  {
+    children.map((child) => (
+      <li class="flex justify-between font-bold">
+        <div class="flex gap-x-1">
+          <span class="text-purple"> d </span>
+          <span class="text-yellow"> r </span>
+          <span class="text-red"> w </span>
+          <span class="text-green"> x </span>
+          <span class="text-yellow"> r </span>
+          <span class=""> - </span>
+          <span class="text-red"> x </span>
+          <span class="text-yellow"> r </span>
+          <span class=""> - </span>
+          <span class="text-red"> x </span>
+        </div>
+        <span> {"-"} </span>
+        <span class="text-green"> {import.meta.env.PUBLIC_USERNAME} </span>
+        <span> {} </span>
+        <span> {} </span>
+        <span> {} </span>
+        <span class="text-cyan">{child}</span>
+      </li>
+    ))
+  }
+</ul>

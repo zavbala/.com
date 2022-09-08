@@ -1,0 +1,17 @@
+[
+  {
+    "title": "etrnal",
+    "about": "Daily design content from Dribbble & Behance, in one place.",
+    "ref": "https://etrnal.vercel.app"
+  },
+  {
+    "title": "sargabot",
+    "about": "A Twitter bot to get daily information about sargassum-free beaches in Quintana Roo, México.",
+    "ref": "https://twitter.com/sargabot"
+  },
+  {
+    "title": "funko mx",
+    "about": "Web scraper to get the best deals on Funko products.",
+    "ref": "https://www.funkomx.com"
+  }
+]

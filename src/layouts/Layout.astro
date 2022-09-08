@@ -1,0 +1,39 @@
+---
+import "@fontsource/jetbrains-mono";
+import { CONTAINER } from "src/lib/constant";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>Jeremy Zabala - Developer</title>
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="" />
+    <meta property="twitter:title" content="" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="" />
+  </head>
+
+  <body class="bg-black text-white font-body">
+    <main class={`${CONTAINER} m-auto flex flex-col p-4`}>
+      <slot />
+    </main>
+  </body>
+</html>

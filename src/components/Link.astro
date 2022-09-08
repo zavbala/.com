@@ -1,0 +1,16 @@
+---
+export interface Props {
+  goto: string;
+}
+
+const { goto } = Astro.props as Props;
+---
+
+<a
+  href={goto}
+  target="_blank"
+  rel="noreferrer"
+  class="underline underline-offset-8"
+>
+  {goto}
+</a>

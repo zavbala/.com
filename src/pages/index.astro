@@ -1,0 +1,84 @@
+---
+import MyStuff from "data/Projects.json";
+import Command from "src/components/Command.astro";
+import Card from "src/components/Details.astro";
+import Link from "src/components/Link.astro";
+import Section from "src/components/Section.astro";
+import Layout from "src/layouts/Layout.astro";
+import { CONTAINER, SOCIAL } from "src/lib/constant";
+---
+
+<Layout>
+  <Command entry={["man", "portfolio"]} />
+
+  <Section title="name">
+    <span>Jeremy Zabala</span>
+  </Section>
+
+  <Section title="synopsis">
+    <p>
+      You can find me on everywhere as
+      <span class="text-green">[ zavbala ]</span>
+    </p>
+  </Section>
+
+  <Section title="description">
+    <span> I'm a web developer, Linux enthusiast and swimmer.</span>
+  </Section>
+
+  <Section title="resume">
+    <a href="" download class="hover:text-yellow uppercase">
+      Click to download {"->"}
+    </a>
+  </Section>
+
+  <Section title="contact">
+    <ul class="flex flex-col gap-y-2">
+      {
+        SOCIAL.map((media) => {
+          const { hostname } = new URL(media);
+          const username = import.meta.env.PUBLIC_USERNAME;
+          const link = ["www.producthunt.com", "hashnode.com"].includes(
+            hostname
+          )
+            ? media + "@" + username
+            : media + username;
+
+          return (
+            <li>
+              <Link goto={link} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Section>
+
+  <Section title="projects">
+    {MyStuff.map((item) => <Card {...item} />)}
+    <a href="/archive" class="uppercase hover:text-yellow">
+      View all projects {"->"}
+    </a>
+  </Section>
+
+  <Section title="author">
+    Designed by
+    <a
+      target="_blank"
+      class="underline text-green underline-offset-8"
+      href={`mailto:${import.meta.env.PUBLIC_EMAIL}`}
+    >
+      {import.meta.env.PUBLIC_EMAIL}
+    </a>
+  </Section>
+
+  <Section title="copyright">
+    This project has been made under the --- license, so you can contribute at
+    <Link goto="https://github.com/zavbala/dotcom" />
+  </Section>
+
+  <footer class={`${CONTAINER} w-full my-10 flex items-center justify-between`}>
+    <small>1.0.0</small>
+    <small class="uppercase">portfolio (1)</small>
+  </footer>
+</Layout>

@@ -1,0 +1,25 @@
+---
+export interface Props {
+  shell?: "bash" | "zsh";
+  entry: string[];
+}
+
+const { entry, shell = "zsh" } = Astro.props as Props;
+
+const SHELLS = {
+  bash: [import.meta.env.PUBLIC_USERNAME, "@", ""],
+  zsh: ["->", "~"],
+};
+---
+
+<div class="my-12 flex items-center text-xl p-5 border rounded border-dotted">
+  {
+    shell === "zsh" ? (
+      <div class="flex gap-x-3">
+        <span class="text-green"> {"->"} </span>
+        <span class="text-cyan"> {"~"} </span>
+      </div>
+    ) : null
+  }
+  <span class="ml-5">{entry.join(" ")}</span>
+</div>

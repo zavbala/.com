@@ -1,0 +1,10 @@
+---
+import Command from "src/components/Command.astro";
+import List from "src/components/List.astro";
+import Layout from "src/layouts/Layout.astro";
+---
+
+<Layout>
+  <Command entry={["ls", "-la", "projects/"]} />
+  <List children={["Hello World"]} />
+</Layout>
