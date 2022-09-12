@@ -1,6 +1,14 @@
 ---
 import "@fontsource/jetbrains-mono";
 import { CONTAINER } from "src/lib/constant";
+
+export interface Props {
+  about: string;
+}
+
+const { about } = Astro.props as Props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const title = "Jeremy Zabala - Developer";
 ---
 
 <!DOCTYPE html>
@@ -12,23 +20,25 @@ import { CONTAINER } from "src/lib/constant";
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
-    <title>Jeremy Zabala - Developer</title>
-    <meta name="title" content="" />
-    <meta name="description" content="" />
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={about} />
+    <meta name="theme-color" content="#000" />
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={about} />
+    <meta property="og:image" content={`${Astro.site}banner.png`} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="" />
-    <meta property="twitter:title" content="" />
-    <meta property="twitter:description" content="" />
-    <meta property="twitter:image" content="" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={about} />
+    <meta property="twitter:image" content={`${Astro.site}banner.png`} />
   </head>
 
   <body class="bg-black text-white font-body">

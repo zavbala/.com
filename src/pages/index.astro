@@ -8,7 +8,9 @@ import Layout from "src/layouts/Layout.astro";
 import { CONTAINER, SOCIAL } from "src/lib/constant";
 ---
 
-<Layout>
+<Layout
+  about="Jeremy Zabala is a software engineer, who loves the web and Linux universe."
+>
   <Command entry={["man", "portfolio"]} />
 
   <Section title="name">
@@ -17,7 +19,7 @@ import { CONTAINER, SOCIAL } from "src/lib/constant";
 
   <Section title="synopsis">
     <p>
-      You can find me on everywhere as
+      You can find me everywhere as
       <span class="text-green">[ zavbala ]</span>
     </p>
   </Section>
