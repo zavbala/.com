@@ -1,6 +1,6 @@
 ---
-import "@fontsource/jetbrains-mono";
-import { CONTAINER } from "src/lib/constant";
+import '@fontsource/jetbrains-mono';
+import { CONTAINER } from 'src/lib/constant';
 
 export interface Props {
   about: string;
@@ -8,7 +8,7 @@ export interface Props {
 
 const { about } = Astro.props as Props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const title = "Jeremy Zabala - Developer";
+const title = 'Jeremy Zabala - Developer';
 ---
 
 <!DOCTYPE html>
@@ -18,6 +18,7 @@ const title = "Jeremy Zabala - Developer";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/styles/global.css" />
 
     <!-- Primary Meta Tags -->
     <title>{title}</title>

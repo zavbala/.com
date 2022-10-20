@@ -1,17 +1,17 @@
 ---
-import MyStuff from "data/Projects.json";
-import Command from "src/components/Command.astro";
-import Card from "src/components/Details.astro";
-import Link from "src/components/Link.astro";
-import Section from "src/components/Section.astro";
-import Layout from "src/layouts/Layout.astro";
-import { CONTAINER, SOCIAL } from "src/lib/constant";
+import MyStuff from 'data/Projects.json';
+import Command from 'src/components/Command.astro';
+import Card from 'src/components/Details.astro';
+import Link from 'src/components/Link.astro';
+import Section from 'src/components/Section.astro';
+import Layout from 'src/layouts/Layout.astro';
+import { CONTAINER, SOCIAL } from 'src/lib/constant';
 ---
 
 <Layout
   about="Jeremy Zabala is a software engineer, who loves the web and Linux universe."
 >
-  <Command entry={["man", "portfolio"]} />
+  <Command entry={['man', 'portfolio']} />
 
   <Section title="name">
     <span>Jeremy Zabala</span>
@@ -30,7 +30,7 @@ import { CONTAINER, SOCIAL } from "src/lib/constant";
 
   <Section title="resume">
     <a href="" download class="hover:text-yellow uppercase">
-      Click to download {"->"}
+      Click to download {'->'}
     </a>
   </Section>
 
@@ -40,10 +40,10 @@ import { CONTAINER, SOCIAL } from "src/lib/constant";
         SOCIAL.map((media) => {
           const { hostname } = new URL(media);
           const username = import.meta.env.PUBLIC_USERNAME;
-          const link = ["www.producthunt.com", "hashnode.com"].includes(
+          const link = ['www.producthunt.com', 'hashnode.com'].includes(
             hostname
           )
-            ? media + "@" + username
+            ? media + '@' + username
             : media + username;
 
           return (
@@ -59,7 +59,7 @@ import { CONTAINER, SOCIAL } from "src/lib/constant";
   <Section title="projects">
     {MyStuff.map((item) => <Card {...item} />)}
     <a href="/archive" class="uppercase hover:text-yellow">
-      View all projects {"->"}
+      View all projects {'->'}
     </a>
   </Section>
 

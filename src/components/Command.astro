@@ -1,25 +1,31 @@
 ---
 export interface Props {
-  shell?: "bash" | "zsh";
+  shell?: 'bash' | 'zsh';
   entry: string[];
 }
 
-const { entry, shell = "zsh" } = Astro.props as Props;
+const { entry, shell = 'zsh' } = Astro.props as Props;
 
 const SHELLS = {
-  bash: [import.meta.env.PUBLIC_USERNAME, "@", ""],
-  zsh: ["->", "~"],
+  bash: [import.meta.env.PUBLIC_USERNAME, '@', ''],
+  zsh: ['->', '~'],
 };
 ---
 
 <div class="my-12 flex items-center text-xl">
   {
-    shell === "zsh" ? (
-      <div class="flex gap-x-3">
-        <span class="text-green"> {"->"} </span>
-        <span class="text-cyan"> {"~"} </span>
+    shell === 'zsh' ? (
+      <div class="flex gap-x-3 mr-3">
+        <span class="text-green"> {'->'} </span>
+        <span class="text-cyan"> {'~'} </span>
       </div>
     ) : null
   }
-  <span class="ml-5">{entry.join(" ")}</span>
+  <div class="flex gap-x-3">
+    {
+      entry.map((item, index) => (
+        <span class={!index ? 'text-green' : null}> {item} </span>
+      ))
+    }
+  </div>
 </div>

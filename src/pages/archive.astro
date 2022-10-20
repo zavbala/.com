@@ -1,10 +1,11 @@
 ---
-import Command from "src/components/Command.astro";
-import List from "src/components/List.astro";
-import Layout from "src/layouts/Layout.astro";
+import Repos from 'data/Archive.json';
+import Command from 'src/components/Command.astro';
+import List from 'src/components/List.astro';
+import Layout from 'src/layouts/Layout.astro';
 ---
 
 <Layout about="All my projects at a glance.">
-  <Command entry={["ls", "-la", "projects/"]} />
-  <List children={["Hello World"]} />
+  <Command entry={['ls', '-l', 'projects/']} />
+  <List items={Repos} />
 </Layout>
