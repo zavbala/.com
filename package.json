@@ -6,9 +6,10 @@
     "astro": "astro",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "pnpm repos && astro build",
     "preview": "astro preview",
-    "format": "prettier --w --plugin-search-dir=. ."
+    "format": "prettier --w --plugin-search-dir=. .",
+    "repos": "node scripts/fetcher.mjs"
   },
   "devDependencies": {
     "@astrojs/react": "^1.2.1",
