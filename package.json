@@ -6,7 +6,7 @@
     "astro": "astro",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "pnpm repos && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --w --plugin-search-dir=. .",
     "repos": "node scripts/fetcher.mjs"
