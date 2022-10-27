@@ -1,0 +1,62 @@
+---
+import Specs from 'data/Specs.json';
+import Command from 'src/components/Command.astro';
+import Layout from 'src/layouts/Layout.astro';
+
+const ASCII = [
+  '-`',
+  '.o+`',
+  '`ooo/',
+  '`+oooo:',
+  '`+oooooo:',
+  '-+oooooo+:',
+  '`/:-:++oooo+:',
+  '`/++++/+++++++:',
+  '`/++++++++++++++:',
+  '`/+++ooooooooooooo/`',
+  './ooosssso++osssssso+`',
+  '.oossssso-````/ossssss+`',
+  '-osssssso.      :ssssssso.',
+  ':osssssss/        osssso+++.',
+  '/ossssssss/        +ssssooo/-',
+  '`/ossssso+/:-        -:/+osssso+-',
+  '`+sso+:-`                 `.-/+oso:',
+  '`++:.                           `-/+/',
+  '.`                                 `/',
+];
+
+const TOP = [import.meta.env.PUBLIC_USERNAME, '@', 'HP15'];
+---
+
+<Layout tagline="Command Not Found - 404" about="Error">
+  <Command entry={['neofetch']} />
+
+  <div class="flex md:flex-row flex-col text-sm gap-y-5">
+    <pre
+      class="text-cyan md:order-1 order-2 flex flex-col grow font-bold">        
+      {ASCII.map((art, index) => <code> {new Array(ASCII.length - index).fill(" ").join("") + art } </code> )}
+    </pre>
+
+    <ul class="flex flex-col gap-y-1 md:order-2 order-1 select-none">
+      <p>
+        {
+          TOP.map((item) => (
+            <span class={item !== '@' ? 'text-cyan font-bold' : null}>
+              {item}
+            </span>
+          ))
+        }
+      </p>
+      <span class="block"> ----------</span>
+
+      {
+        Object.entries(Specs).map(([key, value]) => (
+          <li class="flex gap-x-2">
+            <span class="text-cyan font-bold"> {key}: </span>
+            <span class="grow"> {value} </span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Layout>

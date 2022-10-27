@@ -1,0 +1,18 @@
+{
+  "OS": "Arch Linux x86_64",
+  "Host": "HP 15 Notebook PC",
+  "Kernel": "6.0.2-arch1-1",
+  "Packages": "1265 (pacman)",
+  "Shell": "zsh 5.9",
+  "Resolution": "1366x768",
+  "DE": "Xfce 4.16",
+  "WM": "Xfwm4",
+  "WM Theme": "Arc-Darker-solid",
+  "Theme": "Arc-Dark [GTK2], Adwaita [GTK3]",
+  "Icons": "Papirus-Dark [GTK2], Adwaita [GTK3]",
+  "Terminal": "alacritty",
+  "Terminal Font": "JetBrains Mono Nerd Font",
+  "CPU": "Intel Pentium N3540 (4) @ 2.665GHz",
+  "GPU": "Intel Atom Processor",
+  "Memory": "2111MiB / 3810MiB"
+}
