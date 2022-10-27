@@ -1,6 +1,6 @@
 import { writeFileSync } from 'fs';
 
-const BLACKLIST = ['zavbala', 'dotfiles', '.com', 'sargabot'];
+const BLACKLIST = ['zavbala', 'dotfiles', '.com', 'sargabot', 'etrnal'];
 
 const fetcher = () => {
   fetch(' https://api.github.com/users/zavbala/repos', {

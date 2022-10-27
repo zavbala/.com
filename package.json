@@ -17,7 +17,7 @@
     "@astrojs/tailwind": "^2.1.1",
     "@octokit/types": "^8.0.0",
     "@types/lodash": "^4.14.186",
-    "astro": "^1.5.1",
+    "astro": "^1.5.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.6.0",
     "react": "^18.2.0",
@@ -28,6 +28,6 @@
     "@fontsource/jetbrains-mono": "^4.5.11",
     "date-fns": "^2.29.3",
     "lodash": "^4.17.21",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.1"
   }
 }

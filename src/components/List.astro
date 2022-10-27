@@ -34,7 +34,7 @@ const digits = {
   {
     items.map((child) => (
       <li class="flex gap-x-7">
-        <div class="flex gap-x-1 text-sm md:text-lg">
+        <div class="md:flex hidden gap-x-1">
           <span class="text-purple"> d </span>
 
           {[1, 2, 3].map((group, index) => (
@@ -56,19 +56,19 @@ const digits = {
               {String(child.size).length === 2 ? '1' + child.size : child.size}
             </span>
 
-            <span class="text-yellow">GITHUB</span>
+            <span class="text-yellow"> GITHUB </span>
 
-            <div class="flex gap-x-2">
-              {format(new Date(child.date), 'dd-MMM-k:mm')
+            <div class="hidden md:flex gap-x-2">
+              {format(new Date(child.date), 'dd-MMM-HH:mm')
                 .split('-')
                 .map((item) => (
-                  <span class="hidden md:block text-purple"> {item} </span>
+                  <span class="text-purple"> {item} </span>
                 ))}
             </div>
           </div>
 
           <div class="flex items-center justify-between grow">
-            <span class="text-purple text-sm md:text-lg text-center">
+            <span class="text-purple text-center">
               {child.title}
             </span>
             <a
