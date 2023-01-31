@@ -1,6 +1,6 @@
 export const ANIMATION = 'duration-100 transition-all';
 
-export const CONTAINER = 'max-w-3xl';
+export const CONTAINER = 'max-w-4xl';
 
 export const SOCIAL = [
   'https://github.com/',

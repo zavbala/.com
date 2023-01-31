@@ -18,8 +18,9 @@ import { CONTAINER, SOCIAL } from 'src/lib/constant';
   </Section>
 
   <Section title="synopsis">
-    <p>
+    <p class="leading-6">
       You can find me everywhere as
+      <br class="md:hidden block" />
       <span class="text-green">[ zavbala ]</span>
     </p>
   </Section>
@@ -35,7 +36,7 @@ import { CONTAINER, SOCIAL } from 'src/lib/constant';
   </Section>
 
   <Section title="contact">
-    <ul class="flex flex-col gap-y-2">
+    <ul class="flex flex-col gap-y-3 md:text-lg text-xs">
       {
         SOCIAL.map((media) => {
           const { hostname } = new URL(media);

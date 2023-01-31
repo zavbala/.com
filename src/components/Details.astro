@@ -10,8 +10,8 @@ export interface Props {
 const { about, ref, title } = Astro.props as Props;
 ---
 
-<article class="flex flex-col gap-y-1 justify-between mb-7">
+<article class="flex flex-col gap-y-3 justify-between mb-7">
   <h1 class="text-cyan uppercase font-bold">--{title}</h1>
-  <span>{about}</span>
+  <span class="md:text-lg text-sm">{about}</span>
   <Link goto={ref} />
 </article>

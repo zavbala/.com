@@ -1,9 +1,6 @@
 ---
 import '@fontsource/jetbrains-mono';
-import { inject } from '@vercel/analytics';
 import { CONTAINER } from 'src/lib/constant';
-
-inject();
 
 export interface Props {
   tagline?: string;
@@ -47,8 +44,13 @@ const title = !tagline ? 'Jeremy Zabala - Developer' : tagline;
   </head>
 
   <body class="bg-black text-white font-body">
-    <main class={`${CONTAINER} m-auto flex flex-col p-4`}>
+    <main class={`${CONTAINER} m-auto flex flex-col md:p-12 p-6`}>
       <slot />
     </main>
   </body>
 </html>
+
+<script>
+  import { inject } from '@vercel/analytics';
+  inject();
+</script>

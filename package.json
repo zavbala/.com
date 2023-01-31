@@ -12,21 +12,21 @@
     "repos": "node scripts/fetcher.mjs"
   },
   "devDependencies": {
-    "@astrojs/react": "^1.2.2",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^2.1.2",
-    "@octokit/types": "^8.0.0",
-    "@types/lodash": "^4.14.190",
-    "astro": "^1.6.10",
-    "prettier": "^2.8.0",
-    "prettier-plugin-astro": "^0.7.0",
+    "@astrojs/react": "^2.0.2",
+    "@astrojs/sitemap": "^1.0.1",
+    "@astrojs/tailwind": "^3.0.1",
+    "@octokit/types": "^9.0.0",
+    "@types/lodash": "^4.14.191",
+    "astro": "^2.0.4",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@astrojs/partytown": "^1.0.1",
-    "@fontsource/jetbrains-mono": "^4.5.11",
-    "@vercel/analytics": "^0.1.5",
+    "@astrojs/partytown": "^1.0.3",
+    "@fontsource/jetbrains-mono": "^4.5.12",
+    "@vercel/analytics": "^0.1.8",
     "date-fns": "^2.29.3",
     "lodash": "^4.17.21",
     "tailwindcss": "^3.2.4"
