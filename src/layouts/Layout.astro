@@ -1,6 +1,7 @@
 ---
 import '@fontsource/jetbrains-mono';
 import { CONTAINER } from 'src/lib/constant';
+import { ViewTransitions } from 'astro:transitions';
 
 export interface Props {
   tagline?: string;
@@ -46,6 +47,8 @@ const title = !tagline ? 'Jeremy Zabala - Developer' : tagline;
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={about} />
     <meta property="twitter:image" content={`${Astro.site}banner.png`} />
+
+    <ViewTransitions />
   </head>
 
   <body class="bg-black text-white font-body">
