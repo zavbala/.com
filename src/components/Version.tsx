@@ -1,4 +1,5 @@
 import React from 'react';
+import { URL } from 'src/lib/constant';
 
 const Changelog = ['1.0', '2.1'];
 
@@ -6,12 +7,7 @@ const Version = () => {
   const [current, setCurrent] = React.useState(Changelog.slice(-1)[0]);
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    window.open(
-      (process.env.NODE_ENV === 'production'
-        ? 'https://zavbala'
-        : 'http://localhost:4321') + '/v1',
-      '_blank',
-    );
+    window.open(URL + '/v1', '_blank');
   };
 
   return (

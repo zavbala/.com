@@ -1,9 +1,9 @@
 <script lang="ts">
+  import { URL } from 'src/lib/constant';
   import { fly } from 'svelte/transition';
-  import _ from 'lodash';
 
   const fetcher = async () =>
-    await (await fetch('http://localhost:4321/api/apps/data.json')).json();
+    await (await fetch(URL + '/api/apps/data.json')).json();
 </script>
 
 <div class="lg:col-span-4 space-y-2">
