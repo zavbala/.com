@@ -1,0 +1,87 @@
+---
+import Command from '@/components/v1/Command.astro';
+import Card from '@/components/v1/Details.astro';
+import Link from '@/components/v1/Link.astro';
+import Section from '@/components/v1/Section.astro';
+import Layout from '@/layouts/Layout.astro';
+import MyStuff from 'data/Projects.json';
+import { CONTAINER, SOCIAL } from 'src/lib/constant';
+---
+
+<Layout
+  className="bg-black font-jetbrains"
+  about="Jeremy Zabala is a software engineer, who loves the web and Linux universe."
+>
+  <Command entry={['man', 'portfolio']} />
+
+  <Section title="name">
+    <span>Jeremy Zabala</span>
+  </Section>
+
+  <Section title="synopsis">
+    <p class="leading-6">
+      You can find me everywhere as
+      <br class="block md:hidden" />
+      <span class="text-green">[ zavbala ]</span>
+    </p>
+  </Section>
+
+  <Section title="description">
+    <span> I'm a web developer, Linux enthusiast and swimmer.</span>
+  </Section>
+
+  <Section title="resume">
+    <a href="" download class="uppercase hover:text-yellow">
+      Click to download {'->'}
+    </a>
+  </Section>
+
+  <Section title="contact">
+    <ul class="flex flex-col gap-y-3 text-xs md:text-lg">
+      {
+        SOCIAL.map((media) => {
+          const { hostname } = new URL(media);
+          const username = import.meta.env.PUBLIC_USERNAME;
+          const link = ['www.producthunt.com', 'hashnode.com'].includes(
+            hostname,
+          )
+            ? media + '@' + username
+            : media + username;
+
+          return (
+            <li>
+              <Link goto={link} />
+            </li>
+          );
+        })
+      }
+    </ul>
+  </Section>
+
+  <Section title="projects">
+    {MyStuff.map((item) => <Card {...item} />)}
+    <a href="/v1/archive" class="uppercase hover:text-yellow">
+      View all projects {'->'}
+    </a>
+  </Section>
+
+  <Section title="author">
+    Designed by me, with
+    <a
+      target="_blank"
+      class="text-green underline underline-offset-8"
+      href={`https://astro.build/`}>Astro</a
+    >
+     and lots of coffee.
+  </Section>
+
+  <Section title="copyright">
+    This project has been made under the --- license, so you can contribute at
+    <Link goto="https://github.com/zavbala/.com" />
+  </Section>
+
+  <footer class={`${CONTAINER} w-full my-10 flex items-center justify-between`}>
+    <small>1.0.0</small>
+    <small class="uppercase">portfolio (1)</small>
+  </footer>
+</Layout>

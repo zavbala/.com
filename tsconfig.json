@@ -2,12 +2,15 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
     "noEmit": true,
     "strict": true,
-    "importsNotUsedAsValues": "error",
+    "jsx": "react",
+    "strictNullChecks": true,
+    // "importsNotUsedAsValues": "error",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/components/*"],

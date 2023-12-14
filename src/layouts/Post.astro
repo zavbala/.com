@@ -1,0 +1,24 @@
+---
+import '@fontsource-variable/inter';
+import { ViewTransitions } from 'astro:transitions';
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+
+    <ViewTransitions />
+  </head>
+
+  <body class="bg-[#161412] font-inter">
+    <main
+      class="m-auto flex min-h-screen max-w-3xl flex-col gap-y-5 px-5 lg:px-0"
+    >
+      <slot />
+    </main>
+  </body>
+</html>

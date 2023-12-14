@@ -29,7 +29,7 @@ const fetcher = () => {
 
       writeFileSync(
         process.cwd() + '/data/Archive.json',
-        JSON.stringify(publicRepos, null, ' ')
+        JSON.stringify(publicRepos, null, ' '),
       );
     })
     .catch((error) => console.log(error));

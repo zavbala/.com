@@ -1,7 +1,8 @@
 {
-  "name": "website",
+  "name": "zavbala",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "astro": "astro",
     "dev": "astro dev",
@@ -12,25 +13,31 @@
     "repos": "node scripts/fetcher.mjs"
   },
   "devDependencies": {
-    "@astrojs/react": "^3.0.3",
-    "@astrojs/sitemap": "^3.0.2",
-    "@astrojs/tailwind": "^5.0.2",
-    "@astrojs/vercel": "^5.0.2",
-    "@octokit/types": "^12.0.0",
-    "@types/lodash": "^4.14.200",
-    "astro": "^3.3.2",
-    "prettier": "^3.0.3",
-    "prettier-plugin-astro": "^0.12.0",
+    "@astrojs/react": "^3.0.7",
+    "@astrojs/sitemap": "^3.0.3",
+    "@astrojs/tailwind": "^5.0.3",
+    "@astrojs/vercel": "^6.1.0",
+    "@octokit/types": "^12.4.0",
+    "@types/lodash": "^4.14.202",
+    "astro": "^4.0.5",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@astrojs/partytown": "^2.0.1",
-    "@fontsource/jetbrains-mono": "^5.0.17",
-    "@urql/core": "^4.1.4",
+    "@astrojs/mdx": "^2.0.1",
+    "@astrojs/partytown": "^2.0.2",
+    "@astrojs/svelte": "^5.0.1",
+    "@fontsource-variable/inter": "^5.0.16",
+    "@fontsource/jetbrains-mono": "^5.0.18",
+    "@urql/core": "^4.2.2",
     "@vercel/analytics": "^1.1.1",
     "date-fns": "^2.30.0",
+    "google-play-scraper": "^10.0.0",
     "lodash": "^4.17.21",
-    "tailwindcss": "^3.3.3"
+    "prettier-plugin-tailwindcss": "^0.5.9",
+    "svelte": "^4.2.8",
+    "tailwindcss": "^3.3.6"
   }
 }

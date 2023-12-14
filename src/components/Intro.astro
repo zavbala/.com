@@ -1,0 +1,41 @@
+---
+import { SOCIAL } from 'src/lib/constant';
+import Icons from 'data/Icons.json';
+---
+
+<div class="h-auto space-y-3 rounded p-5 lg:col-span-8 lg:h-[300px]">
+  <h1 class="text-4xl font-bold md:text-7xl">Jeremy Zabala</h1>
+
+  <p class="">
+    Full Stack Developer, UI/UX Designer &
+    <span class="text-orange-600 underline underline-offset-4"> Linux</span>
+     Lover.
+  </p>
+
+  <div class="flex items-center gap-x-3">
+    {
+      SOCIAL.map((media) => (
+        <a
+          target="_blank"
+          aria-label={media}
+          href={/mailto:/g.test(media) ? media : media + 'zavbala'}
+          rel="noopener noreferrer"
+          class="flex h-10 w-10 items-center justify-center rounded-full p-2"
+        >
+          <Fragment
+            set:html={
+              Icons[
+                /mailto:/g.test(media)
+                  ? 'mail'
+                  : (media
+                      .replace('https://', '')
+                      .replace(/.com/g, '')
+                      .replace('/', '') as keyof typeof Icons)
+              ]
+            }
+          />
+        </a>
+      ))
+    }
+  </div>
+</div>

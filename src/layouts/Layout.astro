@@ -1,19 +1,23 @@
 ---
+import '@fontsource-variable/inter';
 import '@fontsource/jetbrains-mono';
-import { CONTAINER } from 'src/lib/constant';
+
 import { ViewTransitions } from 'astro:transitions';
+import { CONTAINER } from 'src/lib/constant';
 
 export interface Props {
+  about?: string;
   tagline?: string;
-  about: string;
+  className?: string;
 }
 
-const { tagline, about } = Astro.props as Props;
+const { tagline, about, className } = Astro.props as Props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const title = !tagline ? 'Jeremy Zabala - Developer' : tagline;
+
+const title = !tagline ? 'Jeremy Zabala' : tagline;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -51,14 +55,14 @@ const title = !tagline ? 'Jeremy Zabala - Developer' : tagline;
     <ViewTransitions />
   </head>
 
-  <body class="bg-black text-white font-body">
+  <body class:list={[className, 'text-white']}>
     <main class={`${CONTAINER} m-auto flex flex-col md:p-12 p-6`}>
       <slot />
     </main>
+
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
   </body>
 </html>
-
-<script>
-  import { inject } from '@vercel/analytics';
-  inject();
-</script>

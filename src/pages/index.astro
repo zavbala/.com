@@ -1,86 +1,28 @@
 ---
-import Command from '@/components/Command.astro';
-import Card from '@/components/Details.astro';
-import Link from '@/components/Link.astro';
-import Section from '@/components/Section.astro';
+import Apps from '@/components/Apps.svelte';
+import Clones from '@/components/Clones.svelte';
+import CurrentlyWorking from '@/components/CurrentlyWorking';
+import Experiments from '@/components/Experiments.svelte';
+import Intro from '@/components/Intro.astro';
+import Version from '@/components/Version';
 import Layout from '@/layouts/Layout.astro';
-import MyStuff from 'data/Projects.json';
-import { CONTAINER, SOCIAL } from 'src/lib/constant';
 ---
 
 <Layout
-  about="Jeremy Zabala is a software engineer, who loves the web and Linux universe."
+  className="bg-[#161412] font-inter"
+  about="A simple, minimal, and beautiful blog theme for Astro."
 >
-  <Command entry={['man', 'portfolio']} />
+  <div class="grid grid-cols-1 gap-y-10 lg:grid-cols-12">
+    <Intro />
+    <CurrentlyWorking client:load />
+    <Clones client:load />
+    <Apps client:load />
+    <Experiments client:load />
+  </div>
 
-  <Section title="name">
-    <span>Jeremy Zabala</span>
-  </Section>
+  <Version client:load />
 
-  <Section title="synopsis">
-    <p class="leading-6">
-      You can find me everywhere as
-      <br class="md:hidden block" />
-      <span class="text-green">[ zavbala ]</span>
-    </p>
-  </Section>
-
-  <Section title="description">
-    <span> I'm a web developer, Linux enthusiast and swimmer.</span>
-  </Section>
-
-  <Section title="resume">
-    <a href="" download class="hover:text-yellow uppercase">
-      Click to download {'->'}
-    </a>
-  </Section>
-
-  <Section title="contact">
-    <ul class="flex flex-col gap-y-3 md:text-lg text-xs">
-      {
-        SOCIAL.map((media) => {
-          const { hostname } = new URL(media);
-          const username = import.meta.env.PUBLIC_USERNAME;
-          const link = ['www.producthunt.com', 'hashnode.com'].includes(
-            hostname
-          )
-            ? media + '@' + username
-            : media + username;
-
-          return (
-            <li>
-              <Link goto={link} />
-            </li>
-          );
-        })
-      }
-    </ul>
-  </Section>
-
-  <Section title="projects">
-    {MyStuff.map((item) => <Card {...item} />)}
-    <a href="/archive" class="uppercase hover:text-yellow">
-      View all projects {'->'}
-    </a>
-  </Section>
-
-  <Section title="author">
-    Designed by me, with
-    <a
-      target="_blank"
-      class="underline text-green underline-offset-8"
-      href={`https://astro.build/`}>Astro</a
-    >
-    and lots of coffee.
-  </Section>
-
-  <Section title="copyright">
-    This project has been made under the --- license, so you can contribute at
-    <Link goto="https://github.com/zavbala/.com" />
-  </Section>
-
-  <footer class={`${CONTAINER} w-full my-10 flex items-center justify-between`}>
-    <small>1.0.0</small>
-    <small class="uppercase">portfolio (1)</small>
-  </footer>
+  <div class="b fixed right-3 top-3 rounded-full bg-red/40 px-5 py-2 text-sm">
+    ⚠️ Under Construction, do not cross.
+  </div>
 </Layout>
