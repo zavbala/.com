@@ -4,7 +4,7 @@ export const CONTAINER = 'max-w-6xl';
 
 export const URL =
   process.env.NODE_ENV === 'production'
-    ? 'https://zavbala'
+    ? 'https://zavbala.com'
     : 'http://localhost:4321';
 
 export const SOCIAL = [
