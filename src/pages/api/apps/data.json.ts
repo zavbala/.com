@@ -1,6 +1,10 @@
 import client from 'google-play-scraper';
 
-const apps = ['com.zavbala.loterya', 'com.zavbala.royaldek'];
+const apps = [
+  'com.zavbala.loterya',
+  'com.zavbala.royaldek',
+  'com.scrolingo.app',
+];
 
 export const GET = async () => {
   const data: any = [];

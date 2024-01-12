@@ -22,6 +22,11 @@
       description: 'Daily tracking of seaweed in the Caribbean.',
       favicon: 'favicon.ico',
     },
+    // {
+    //   url: 'https://perfumazo.com',
+    //   description: 'Dropshipping store about perfumes.',
+    //   favicon: 'favicon.ico',
+    // },
   ];
 
   const fakePromise = () => new Promise((resolve) => setTimeout(resolve, 1500));

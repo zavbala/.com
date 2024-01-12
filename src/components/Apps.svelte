@@ -28,8 +28,8 @@
   {:then data}
     {#each data as app, index}
       <a
-        href={app.url}
         target="_blank"
+        href={app.source}
         in:fly|global={{ y: 100, duration: 1000, delay: index * 100 }}
         class="w-full flex items-center justify-between gap-x-2 rounded-md p-4 bg-[#262626]"
       >
