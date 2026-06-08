@@ -1,65 +1,18 @@
 import { ThemeToggle } from "./theme-toggle";
 import { TypedPrompt } from "./typed-prompt";
-
-const projects = [
-  {
-    name: "ectarea",
-    description: "Real estate platform for developers",
-    href: "https://ectarea.mx/",
-  },
-  {
-    name: "abitar",
-    description: "Real estate marketplace",
-    href: "https://abitar.mx/",
-  },
-  {
-    name: "funklo",
-    description: "Online shop for collectibles",
-    href: "https://funklo.shop/",
-  },
-];
-
-const contributions = [
-  {
-    name: "react docs (es)",
-    description: "Spanish translation of the React documentation",
-    href: "https://es.react.dev/",
-  },
-];
-
-const options = [
-  { flag: "--projects", description: "list shipped products", href: "#projects" },
-  {
-    flag: "--contributions",
-    description: "open-source work",
-    href: "#contributions",
-  },
-  { flag: "--hire", description: "check availability", href: "#exit-status" },
-  { flag: "--contact", description: "ways to reach me", href: "#see-also" },
-  { flag: "--source", description: "view this page's source", href: "#source" },
-];
-
-const environment = [
-  { name: "OS", value: "linux" },
-  { name: "SHELL", value: "zsh" },
-  { name: "EDITOR", value: "nvim" },
-  { name: "STACK", value: "typescript · react · next.js · node" },
-];
-
-const exitStatus = [
-  { code: "0", meaning: "available for new opportunities" },
-  { code: "1", meaning: "currently shipping at Intuit" },
-];
-
-const links = [
-  { label: "github", href: "https://github.com/zavbala" },
-  { label: "x", href: "https://x.com/zavbala" },
-  { label: "linkedin", href: "https://www.linkedin.com/in/zavbala" },
-  { label: "email", href: "mailto:jeremy.zbala@gmail.com" },
-];
-
-// Strip the protocol/mailto so links read like a man page's SEE ALSO entries.
-const display = (href: string) => href.replace(/^https?:\/\//, "").replace(/^mailto:/, "").replace(/\/$/, "");
+import {
+  author,
+  contributions,
+  date,
+  description,
+  display,
+  environment,
+  exitStatus,
+  links,
+  options,
+  projects,
+  resume,
+} from "./content";
 
 function Section({
   title,
@@ -132,11 +85,7 @@ export default function Home() {
           </div>
         </Section>
 
-        <Section title="DESCRIPTION">
-          Builds web platforms and products end to end. Linux enthusiast and
-          open-source contributor. Currently shipping at Intuit, with side
-          projects across real estate and e-commerce.
-        </Section>
+        <Section title="DESCRIPTION">{description}</Section>
 
         <Section title="OPTIONS">
           <div className="flex flex-col gap-1">
@@ -198,6 +147,21 @@ export default function Home() {
           </div>
         </Section>
 
+        <Section title="FILES">
+          <a
+            href={resume.path}
+            download={resume.filename}
+            className="flex flex-wrap gap-x-4 transition-colors hover:text-foreground"
+          >
+            <span className="w-28 shrink-0 text-foreground">
+              {resume.path.replace(/^\//, "")}
+            </span>
+            <span className="min-w-0 text-foreground/60">
+              {resume.description}
+            </span>
+          </a>
+        </Section>
+
         <Section title="SEE ALSO">
           <div className="flex flex-col gap-1">
             {links.map(({ label, href }) => (
@@ -240,10 +204,17 @@ export default function Home() {
           </a>
         </Section>
 
-        <Section title="AUTHOR">Written by Jeremy Zabala.</Section>
+        <Section title="AUTHOR">{author}</Section>
+
+        <p className="mt-6 text-foreground/40">
+          <span className="select-none"># tip: </span>this whole page lives in
+          your terminal too — try{" "}
+          <code className="text-foreground/70">curl zavbala.com</code> or{" "}
+          <code className="text-foreground/70">curl zavbala.com/neofetch</code>
+        </p>
 
         <div className="mt-10">
-          <Rule center="June 2026" />
+          <Rule center={date} />
         </div>
       </div>
     </main>

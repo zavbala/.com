@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { Providers } from "./providers";
+import { ConsoleEgg } from "./console-egg";
 import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <Providers>{children}</Providers>
+        <ConsoleEgg />
       </body>
     </html>
   );
