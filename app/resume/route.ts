@@ -15,6 +15,8 @@ export async function GET(request: Request) {
       "content-type": "application/pdf",
       "content-disposition": `attachment; filename="${resume.filename}"`,
       "cache-control": "public, max-age=3600",
+      // Keep this out of search indexes (belt-and-suspenders with robots.ts).
+      "x-robots-tag": "noindex, noarchive, nofollow",
     },
   });
 }
